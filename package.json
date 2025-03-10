@@ -1,0 +1,29 @@
+{
+    "name": "@6digit-studio/mcp",
+    "version": "0.0.1",
+    "description": "MCP server for interacting with 6digit studio",
+    "license": "MIT",
+    "author": "6digit studio (https://6digit.studio)",
+    "homepage": "https://6digit.studio",
+    "bugs": "https://github.com/6digit-studio/mcp/issues",
+    "type": "module",
+    "bin": {
+        "mcp": "dist/index.js"
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsc && shx chmod +x dist/*.js",
+        "clean": "shx rm -rf dist",
+        "prepare": "npm run clean && npm run build",
+        "watch": "tsc --watch"
+    },
+    "dependencies": {
+        "@modelcontextprotocol/sdk": "^1.6.1"
+    },
+    "devDependencies": {
+        "shx": "^0.3.4",
+        "typescript": "^5.6.2"
+    }
+}
