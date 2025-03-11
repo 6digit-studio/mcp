@@ -5,7 +5,7 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { ConvexClient } from "convex/browser";
 import { z } from "zod";
 
-const API_KEY = process.env.API_KEY;
+const API_KEY = process.argv[2];
 const CONVEX_URL = process.env.CONVEX_URL || "https://clever-starling-109.convex.cloud";
 
 if (!API_KEY) {
