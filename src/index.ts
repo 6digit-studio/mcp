@@ -1,11 +1,24 @@
+#!/usr/bin/env node
+
 import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { ConvexClient } from "convex/browser";
 import { z } from "zod";
+
+const API_KEY = process.env.API_KEY;
+const CONVEX_URL = process.env.CONVEX_URL || "https://clever-starling-109.convex.cloud";
+
+if (!API_KEY) {
+  console.error("API_KEY is not set");
+  process.exit(-1);
+}
+
+const convexClient = new ConvexClient(CONVEX_URL);
 
 // Create an MCP server
 const server = new McpServer({
-  name: "Demo",
-  version: "1.0.0"
+  name: "6digit studio",
+  version: "0.0.1"
 });
 
 // Add an addition tool

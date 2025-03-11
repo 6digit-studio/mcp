@@ -17,12 +17,15 @@
         "build": "tsc && shx chmod +x dist/*.js",
         "clean": "shx rm -rf dist",
         "prepare": "npm run clean && npm run build",
-        "watch": "tsc --watch"
+        "watch": "tsc --watch",
+        "docker": "docker build . -t 6digit/mcp"
     },
     "dependencies": {
-        "@modelcontextprotocol/sdk": "^1.6.1"
+        "@modelcontextprotocol/sdk": "^1.6.1",
+        "convex": "^1.20.0"
     },
     "devDependencies": {
+        "@types/node": "^22.13.10",
         "shx": "^0.3.4",
         "typescript": "^5.6.2"
     }
